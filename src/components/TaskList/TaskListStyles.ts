@@ -20,6 +20,11 @@ export const TaskListStyled = styled(motion.ul)`
 		color: #e6e6e6;
 	}
 
+	.item__text--complete {
+		color: grey;
+		text-decoration: line-through;
+	}
+
 	.task-list__actions {
 		display: flex;
 		align-items: center;
@@ -33,6 +38,10 @@ export const TaskListStyled = styled(motion.ul)`
 		width: 45px;
 		height: 45px;
 		border-radius: 100px;
+	}
+
+	.actions__btn--complete {
+		background: grey;
 	}
 
 	.actions__btn:last-child {

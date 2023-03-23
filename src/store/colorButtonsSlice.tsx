@@ -12,9 +12,22 @@ const colorData = colorButtonsData.map((item) => ({
 	active: item.active,
 }));
 
+if (!localStorage.getItem('colors')) {
+	localStorage.setItem('colors', JSON.stringify(colorData));
+} else {
+	localStorage.getItem('colors');
+}
+
+const colorDataStorage = JSON.parse(localStorage.getItem('colors') || '');
+
+const index = colorDataStorage.findIndex(
+	(item: { id: string; background: string; active: boolean }) =>
+		item.active === true
+);
+
 const initialState: ColorButtonsInterface = {
-	items: colorData,
-	selectedColor: colorButtonsData[0].background,
+	items: colorDataStorage,
+	selectedColor: colorDataStorage[index].background,
 };
 
 const colorButtonsSlice = createSlice({
@@ -23,6 +36,7 @@ const colorButtonsSlice = createSlice({
 	reducers: {
 		switchColor(state, action) {
 			const { background, id } = action.payload;
+
 			state.selectedColor = background;
 
 			state.items = state.items.map((item) =>
@@ -30,6 +44,8 @@ const colorButtonsSlice = createSlice({
 					? { ...item, active: true }
 					: { ...item, active: false }
 			);
+
+			localStorage.setItem('colors', JSON.stringify(state.items));
 		},
 	},
 });

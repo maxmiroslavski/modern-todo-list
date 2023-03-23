@@ -1,5 +1,5 @@
 // React
-import React from 'react';
+import React, { useState } from 'react';
 
 // Redux
 import { useAppDispatch } from '../../hooks/reduxHooks';
@@ -15,6 +15,8 @@ import { motion } from 'framer-motion';
 export const TaskListItem = (props: { task: string; id: string }) => {
 	const { task, id } = props;
 
+	const [isComplete, setIsComplete] = useState(false);
+
 	const dispatch = useAppDispatch();
 
 	return (
@@ -27,19 +29,34 @@ export const TaskListItem = (props: { task: string; id: string }) => {
 			exit={{ opacity: 0, scale: 0.5 }}
 			className="task-list__item"
 		>
-			<span className="item__text">{task}</span>
+			<span
+				className={`item__text ${
+					isComplete ? 'item__text--complete' : ''
+				}`}
+			>
+				{task}
+			</span>
 
 			<div className="task-list__actions">
-				<button className="actions__btn">
+				<motion.button
+					className={`actions__btn ${
+						isComplete ? 'actions__btn--complete' : ''
+					}`}
+					onClick={() => setIsComplete(!isComplete)}
+					whileTap={{ scale: 0.85 }}
+				>
 					<img src={checkIcon} alt="Check icon" />
-				</button>
+				</motion.button>
 
-				<button
-					className="actions__btn"
+				<motion.button
+					className={`actions__btn ${
+						isComplete ? 'actions__btn--complete' : ''
+					}`}
 					onClick={() => dispatch(removeTask(id))}
+					whileTap={{ scale: 0.85 }}
 				>
 					<img src={trashIcon} alt="Trash icon" />
-				</button>
+				</motion.button>
 			</div>
 		</motion.li>
 	);

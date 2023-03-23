@@ -4,7 +4,15 @@ interface todoInterface {
 	items: { id: string; text: string }[];
 }
 
-const initialState: todoInterface = { items: [] };
+if (!localStorage.getItem('tasks')) {
+	localStorage.setItem('tasks', '[]');
+} else {
+	localStorage.getItem('tasks');
+}
+
+const itemsLocalStorage = JSON.parse(localStorage.getItem('tasks') || '');
+
+const initialState: todoInterface = { items: itemsLocalStorage };
 
 const todoListSlice = createSlice({
 	name: 'todoList',
@@ -16,14 +24,15 @@ const todoListSlice = createSlice({
 				id: newTask.id,
 				text: newTask.text,
 			});
+
+			localStorage.setItem('tasks', JSON.stringify(state.items));
 		},
 		removeTask(state, action) {
 			const id = action.payload;
 
 			state.items = state.items.filter((item) => item.id !== id);
-			// setTimeout(async () => {
-			// 	state.items = state.items.filter((item) => item.id !== id);
-			// }, 500);
+
+			localStorage.setItem('tasks', JSON.stringify(state.items));
 		},
 	},
 });
