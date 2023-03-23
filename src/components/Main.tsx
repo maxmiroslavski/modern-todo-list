@@ -16,6 +16,7 @@ import { useFetch } from '../hooks/useFetch';
 
 // Packages
 import { motion } from 'framer-motion';
+import { ClearTodoButton } from './ClearTodoButton/ClearTodoButton';
 
 export const Main = (props: { fetchAddress: string }) => {
 	const { fetchAddress } = props;
@@ -28,7 +29,7 @@ export const Main = (props: { fetchAddress: string }) => {
 
 	return (
 		<>
-			<MainStyled background={selectedColor}>
+			<MainStyled className="container" background={selectedColor}>
 				<ColorButtons />
 				<motion.div
 					initial={{ opacity: 0 }}
@@ -45,6 +46,7 @@ export const Main = (props: { fetchAddress: string }) => {
 						</>
 					)}
 				</motion.div>
+				<ClearTodoButton />
 			</MainStyled>
 		</>
 	);

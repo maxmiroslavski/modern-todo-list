@@ -8,6 +8,15 @@ export const QuoteStyled = styled.div`
 	.quote__text {
 		font-size: 50px;
 		margin-bottom: 20px;
+
+		@media (max-width: 768px) {
+			font-size: 46px;
+		}
+
+		@media (max-width: 425px) {
+			font-size: 38px;
+			line-height: 120%;
+		}
 	}
 
 	.quote__author {
@@ -15,5 +24,13 @@ export const QuoteStyled = styled.div`
 		font-style: italic;
 		font-weight: 100;
 		display: inline-block;
+
+		@media (max-width: 768px) {
+			font-size: 26px;
+		}
+
+		@media (max-width: 425px) {
+			font-size: 22px;
+		}
 	}
 `;

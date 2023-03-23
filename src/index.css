@@ -18,6 +18,10 @@ html::-webkit-scrollbar {
 	display: none;
 }
 
+.container {
+	padding: 0 15px;
+}
+
 @keyframes color {
 	0% {
 		background-position: 50% 0%;

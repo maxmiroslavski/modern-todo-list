@@ -43,9 +43,12 @@ export const TaskListItem = (props: { task: string; id: string }) => {
 						isComplete ? 'actions__btn--complete' : ''
 					}`}
 					onClick={() => setIsComplete(!isComplete)}
-					whileTap={{ scale: 0.85 }}
 				>
-					<img src={checkIcon} alt="Check icon" />
+					<img
+						className="btn__icon"
+						src={checkIcon}
+						alt="Check icon"
+					/>
 				</motion.button>
 
 				<motion.button
@@ -53,9 +56,12 @@ export const TaskListItem = (props: { task: string; id: string }) => {
 						isComplete ? 'actions__btn--complete' : ''
 					}`}
 					onClick={() => dispatch(removeTask(id))}
-					whileTap={{ scale: 0.85 }}
 				>
-					<img src={trashIcon} alt="Trash icon" />
+					<img
+						className="btn__icon"
+						src={trashIcon}
+						alt="Trash icon"
+					/>
 				</motion.button>
 			</div>
 		</motion.li>

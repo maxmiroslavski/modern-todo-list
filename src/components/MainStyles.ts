@@ -10,10 +10,18 @@ export const MainStyled = styled.main.attrs(
 	flex-direction: column;
 	align-items: center;
 	min-height: 100vh;
-	padding: 220px 0;
+	padding: 175px 30px;
 	background: ${(props) => props.background};
-	background-size: 200% 200%;
+	background-size: 300% 300%;
 	animation: color 12s ease-in-out infinite;
+
+	@media (max-width: 768px) {
+		padding: 125px 15px;
+	}
+
+	@media (max-width: 425px) {
+		padding: 100px 15px;
+	}
 
 	@keyframes color {
 		0% {

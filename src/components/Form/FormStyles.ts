@@ -10,6 +10,20 @@ export const FormStyled = styled.form`
 	justify-content: space-between;
 	align-items: center;
 
+	@media (max-width: 1024px) {
+		min-width: 0;
+		max-width: 800px;
+	}
+
+	@media (max-width: 768px) {
+		height: 55px;
+	}
+
+	@media (max-width: 425px) {
+		height: 50px;
+		border-radius: 20px;
+	}
+
 	.form__input {
 		background: none;
 		border: none;
@@ -19,6 +33,10 @@ export const FormStyled = styled.form`
 		margin: 0 20px;
 		font-size: 24px;
 		width: 100%;
+
+		@media (max-width: 768px) {
+			font-size: 22px;
+		}
 	}
 
 	.form__add-btn {
@@ -32,6 +50,36 @@ export const FormStyled = styled.form`
 		cursor: pointer;
 		font-size: 24px;
 		transition: 200ms;
+		display: flex;
+		align-items: center;
+
+		@media (max-width: 768px) {
+			height: 55px;
+			padding: 0 8px;
+		}
+
+		@media (max-width: 425px) {
+			height: 50px;
+			border-radius: 0px 20px 20px 0px;
+		}
+	}
+
+	.add-btn__text {
+		display: block;
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	.add-btn__icon {
+		display: none;
+		height: 40px;
+		width: 40px;
+		padding-right: 3px;
+
+		@media (max-width: 768px) {
+			display: block;
+		}
 	}
 
 	.form__add-btn:hover {

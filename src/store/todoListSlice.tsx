@@ -20,6 +20,7 @@ const todoListSlice = createSlice({
 	reducers: {
 		addTask(state, action) {
 			const newTask = action.payload;
+
 			state.items.push({
 				id: newTask.id,
 				text: newTask.text,
@@ -34,9 +35,14 @@ const todoListSlice = createSlice({
 
 			localStorage.setItem('tasks', JSON.stringify(state.items));
 		},
+		removeAllTasks(state) {
+			state.items.length = 0;
+
+			localStorage.setItem('tasks', JSON.stringify(state.items));
+		},
 	},
 });
 
-const { addTask, removeTask } = todoListSlice.actions;
+const { addTask, removeTask, removeAllTasks } = todoListSlice.actions;
 
-export { todoListSlice, addTask, removeTask };
+export { todoListSlice, addTask, removeTask, removeAllTasks };

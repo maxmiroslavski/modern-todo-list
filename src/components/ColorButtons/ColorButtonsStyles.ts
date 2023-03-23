@@ -5,10 +5,14 @@ import { motion } from 'framer-motion';
 
 export const ColorButtonsStyled = styled(motion.div)`
 	position: absolute;
-	top: 40px;
-	right: 50px;
+	top: 30px;
+	right: 30px;
 	display: flex;
 	gap: 20px;
+
+	@media (max-width: 768px) {
+		right: 15px;
+	}
 
 	.color-btn {
 		height: 40px;

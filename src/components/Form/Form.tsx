@@ -5,6 +5,9 @@ import React, { useState } from 'react';
 import { useAppDispatch } from '../../hooks/reduxHooks';
 import { addTask } from '../../store/todoListSlice';
 
+// Assets
+import addBtn from '../../assets/add-btn.svg';
+
 // Components
 import { FormStyled } from './FormStyles';
 
@@ -42,7 +45,10 @@ export const Form = () => {
 				placeholder="Add a task"
 				value={task}
 			/>
-			<button className="form__add-btn">Add</button>
+			<button className="form__add-btn">
+				<img className="add-btn__icon" src={addBtn} alt="add-btn" />
+				<span className="add-btn__text">Add</span>
+			</button>
 		</FormStyled>
 	);
 };
