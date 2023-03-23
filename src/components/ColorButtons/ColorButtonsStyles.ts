@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-
-// Packages
 import { motion } from 'framer-motion';
 
 export const ColorButtonsStyled = styled(motion.div)`

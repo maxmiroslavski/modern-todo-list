@@ -1,10 +1,15 @@
+// React
 import React from 'react';
-import { ClearButtonStyled } from './ClearTodoButtonStyles';
 
+// Redux
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
 import { removeAllTasks } from '../../store/todoListSlice';
 
+// Packages
 import { AnimatePresence } from 'framer-motion';
+
+// Components
+import { ClearButtonStyled } from './ClearTodoButtonStyles';
 
 export const ClearTodoButton = () => {
 	const dispatch = useAppDispatch();

@@ -5,14 +5,14 @@ import React, { useState } from 'react';
 import { useAppDispatch } from '../../hooks/reduxHooks';
 import { addTask } from '../../store/todoListSlice';
 
+// Packages
+import { v4 } from 'uuid';
+
 // Assets
 import addBtn from '../../assets/add-btn.svg';
 
 // Components
 import { FormStyled } from './FormStyles';
-
-// Packages
-import { v4 } from 'uuid';
 
 export const Form = () => {
 	const dispatch = useAppDispatch();

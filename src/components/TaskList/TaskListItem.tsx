@@ -5,12 +5,12 @@ import React, { useState } from 'react';
 import { useAppDispatch } from '../../hooks/reduxHooks';
 import { removeTask } from '../../store/todoListSlice';
 
+// Packages
+import { motion } from 'framer-motion';
+
 // Assets
 import checkIcon from '../../assets/check-icon.svg';
 import trashIcon from '../../assets/trash-icon.svg';
-
-// Packages
-import { motion } from 'framer-motion';
 
 export const TaskListItem = (props: { task: string; id: string }) => {
 	const { task, id } = props;
