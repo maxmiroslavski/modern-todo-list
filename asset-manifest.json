@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/modern-todo-list/static/css/main.3f701306.css",
+    "main.js": "/modern-todo-list/static/js/main.fe108ed7.js",
+    "index.html": "/modern-todo-list/index.html",
+    "static/media/add-btn.svg": "/modern-todo-list/static/media/add-btn.132b1a0b95a230de668d0ea3f9f0a1e4.svg",
+    "static/media/trash-icon.svg": "/modern-todo-list/static/media/trash-icon.ef4a12ee94ab2bc3e6c160e2c530086f.svg",
+    "static/media/check-icon.svg": "/modern-todo-list/static/media/check-icon.5c9542f3cd32ed320473e6d21d15d765.svg",
+    "main.3f701306.css.map": "/modern-todo-list/static/css/main.3f701306.css.map",
+    "main.fe108ed7.js.map": "/modern-todo-list/static/js/main.fe108ed7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3f701306.css",
+    "static/js/main.fe108ed7.js"
+  ]
+}
