@@ -1,0 +1,17 @@
+[
+	{
+		"id": "83c7ba2f-7392-4d7d-9e23-35adbe186046",
+		"background": "linear-gradient(35deg, #0e1c26, #2a454b,#294861)",
+		"active": true
+	},
+	{
+		"id": "0175d1f0-a8c6-41bf-8d02-df5734d829a4",
+		"background": "linear-gradient(35deg, #832388, #e3436b, #f0772f)",
+		"active": false
+	},
+	{
+		"id": "a11e3995-b0bd-4d58-8c48-5e49ae7f7f23",
+		"background": "linear-gradient(35deg, #1cdce8, #bb77ed,#f34a62)",
+		"active": false
+	}
+]
